@@ -45,7 +45,7 @@ The `row` and `rows` functions are for use in TypeScript, they essentially handl
 
 ```ts
 import { createClient } from "@libsql/client"
-import { row, roes, sqlite } from "@deadcode-uk/archivium"
+import { row, rows, sqlite } from "@deadcode-uk/archivium"
 
 const client = createClient(...)
 
