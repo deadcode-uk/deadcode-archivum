@@ -1,4 +1,4 @@
-# Archivium
+# Archivum
 
 Helper functions for JavaScript and TypeScript that compliment the libSQL client
 
@@ -7,8 +7,10 @@ Helper functions for JavaScript and TypeScript that compliment the libSQL client
 `sqlite` is used as a template literal tag, and simplifies the creation of query statements, especially when arguments need to be passed into the statement
 
 ```ts
-import { client } from "app/database"
+import { createClient } from "@libsql/client"
 import { sqlite } from "@deadcode-uk/archivium"
+
+const client = createClient(...)
 
 export async function soSomething(): Promise<void> {
     const someValue = 100
@@ -22,8 +24,10 @@ export async function soSomething(): Promise<void> {
 That would produce the same result as:
 
 ```ts
-import { client } from "app/database"
+import { createClient } from "@libsql/client"
 import { sqlite } from "@deadcode-uk/archivium"
+
+const client = createClient(...)
 
 export async function soSomething(): Promise<void> {
     const someValue = 100
@@ -40,8 +44,10 @@ export async function soSomething(): Promise<void> {
 The `row` and `rows` functions are for use in TypeScript, they essentially handle type-casting of the result object returned from libSQL queries
 
 ```ts
-import { client } from "app/database"
+import { createClient } from "@libsql/client"
 import { row, roes, sqlite } from "@deadcode-uk/archivium"
+
+const client = createClient(...)
 
 export type Example = {
     id: number
