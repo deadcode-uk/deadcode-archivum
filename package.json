@@ -1,0 +1,19 @@
+{
+    "name": "@deadcode-uk/archivum",
+    "version": "0.1.0",
+    "type": "module",
+    "main": "index.js",
+    "types": "types.d.ts",
+    "files": [
+        "index.js",
+        "types.d.ts",
+        "license.md",
+        "readme.md"
+    ],
+    "peerDependencies": {
+        "@libsql/client": "*"
+    },
+    "devDependencies": {
+        "prettier": "^3"
+    }
+}
