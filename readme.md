@@ -2,6 +2,20 @@
 
 Helper functions for JavaScript and TypeScript that compliment the libSQL client
 
+**Installation**
+
+```
+npm install @deadcode-uk/archivum
+```
+
+**Peer Dependencies**
+
+Your project will need to include the following packages:
+
+```
+@libsql/client
+```
+
 ## sqlite
 
 `sqlite` is used as a template literal tag, and simplifies the creation of query statements, especially when arguments need to be passed into the statement
