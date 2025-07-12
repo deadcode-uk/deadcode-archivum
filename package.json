@@ -1,6 +1,6 @@
 {
     "name": "@deadcode-uk/archivum",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "type": "module",
     "main": "index.js",
     "types": "types.d.ts",
@@ -8,7 +8,7 @@
     "repository": {
         "url": "git+https://github.com/deadcode-uk/deadcode-archivum.git"
     },
-    "keywrods": ["node","sqlite","migrations"],
+    "keywrods": ["sqlite","javascript","typescript"],
     "files": [
         "index.js",
         "types.d.ts",
