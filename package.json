@@ -1,13 +1,14 @@
 {
     "name": "@deadcode-uk/archivum",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "type": "module",
     "main": "index.js",
     "types": "types.d.ts",
     "license": "MIT",
     "repository": {
-        "url": "git+https://github.com/simon-robertson/deadcode-archivum.git"
+        "url": "git+https://github.com/deadcode-uk/deadcode-archivum.git"
     },
+    "keywrods": ["node","sqlite","migrations"],
     "files": [
         "index.js",
         "types.d.ts",
