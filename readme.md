@@ -70,7 +70,7 @@ export type Example = {
 }
 
 export async function fetchFirstExample(): Promise<Example | null> {
-    const result = await client.execute(`
+    const result = await client.execute(sqlite`
         SELECT * FROM examples LIMIT 1
     `)
 
@@ -78,10 +78,55 @@ export async function fetchFirstExample(): Promise<Example | null> {
 }
 
 export async function fetchAllExamples(): Promise<Example[]> {
-    const result = await client.execute(`
+    const result = await client.execute(sqlite`
         SELECT * FROM examples
     `)
 
     return rows(result) // or rows<Example>(result)
+}
+```
+
+## Row\<T\> and Rows\<T\>
+
+The `Row<T>` type will add `id`, `created_at`, and `updated_at` to the type `T`
+
+The `Rows<T>` type is an alias for `Row<T>[]`
+
+```ts
+import { createClient } from "@libsql/client"
+import { Row, Rows, row, rows, sqlite } from "@deadcode-uk/archivium"
+
+const client = createClient(...)
+
+type Article = {
+    slug: string
+    title: string
+    content: string
+}
+
+export async function createArticle(article: Article): Promise<void> {
+    await client.execute(sqlite`
+        INSERT INTO articles (
+            slug, title, content
+        ) VALUES (
+            ${article.slug}, ${article.title}, ${article.content}
+        )
+    `)
+}
+
+export async function fetchArticle(slug: string): Promise<Row<Article> | null> {
+    const result = await client.execute(sqlite`
+        SELECT * FROM articles WHERE slug = ${slug} LIMIT 1
+    `)
+
+    return row(result)
+}
+
+export async function fetchArticles(): Promise<Rows<Article>> {
+    const result = await client.execute(sqlite`
+        SELECT * FROM articles
+    `)
+
+    return rows(result)
 }
 ```
