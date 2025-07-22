@@ -13,3 +13,5 @@ export function sqlite(sql: TemplateStringsArray, ...args: InValue[]): InStateme
 export function row<T>(result: ResultSet): T | null
 
 export function rows<T>(result: ResultSet): T[]
+
+export function unix(): number
